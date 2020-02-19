@@ -12,13 +12,16 @@ const BlogContextProvider = props => {
 
   const [state, dispatch] = useReducer(BlogReducer, initialState);
 
-  const getPosts = () => {
-    dispatch({ type: 'SEND_REQUEST' });
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.json())
-      .then(data => dispatch({ type: 'SET_POSTS', payload: data }))
-      .catch(err => console.log(err));
-    dispatch({ type: 'REQUEST_FINISH' });
+  const getPosts = async () => {
+    try {
+      dispatch({ type: 'SEND_REQUEST' });
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const data = await response.json();
+      dispatch({ type: 'REQUEST_FINISH' });
+      dispatch({ type: 'SET_POSTS', payload: data });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   // what is differnce between
