@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import { BlogReducer } from '../reducers/BlogReducer';
-const BlogContext = createContext();
+
+export const BlogContext = createContext();
 
 const BlogContextProvider = props => {
   const initialState = {
@@ -14,12 +15,10 @@ const BlogContextProvider = props => {
   const getPosts = () => {
     dispatch({ type: 'SEND_REQUEST' });
     fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => {
-        dispatch({ type: 'SEND_REQUEST' });
-        return response.json;
-      })
-      .then(data => dispatch({ type: 'SET_POSTS', payload: data.body }))
+      .then(response => response.json())
+      .then(data => dispatch({ type: 'SET_POSTS', payload: data }))
       .catch(err => console.log(err));
+    dispatch({ type: 'REQUEST_FINISH' });
   };
 
   // what is differnce between
@@ -28,7 +27,9 @@ const BlogContextProvider = props => {
   return (
     <BlogContext.Provider
       value={{
-        state,
+        blogPosts: state.blogPosts,
+        currentBlogPost: state.currentBlogPost,
+        loading: state.loading,
         getPosts
       }}
     >
