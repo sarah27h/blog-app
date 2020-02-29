@@ -10,12 +10,16 @@ const BlogContextProvider = props => {
     loading: true
   };
 
+  const API_KEY = process.env.REACT_APP_NEWS_KEY;
+
   const [state, dispatch] = useReducer(BlogReducer, initialState);
 
   const getPosts = async () => {
     try {
       dispatch({ type: 'SEND_REQUEST' });
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const response = await fetch(
+        `https://newsapi.org/v2/everything?q=javascript&apiKey=${API_KEY}`
+      );
       const data = await response.json();
       dispatch({ type: 'REQUEST_FINISH' });
       dispatch({ type: 'SET_POSTS', payload: data });
