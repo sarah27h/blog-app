@@ -18,11 +18,11 @@ const BlogContextProvider = props => {
     try {
       dispatch({ type: 'SEND_REQUEST' });
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=javascript&apiKey=${API_KEY}`
+        `https://newsapi.org/v2/everything?q=javascript&pageSize=10&apiKey=${API_KEY}`
       );
       const data = await response.json();
       dispatch({ type: 'REQUEST_FINISH' });
-      dispatch({ type: 'SET_POSTS', payload: data });
+      dispatch({ type: 'SET_POSTS', payload: data.articles });
     } catch (err) {
       console.log(err);
     }
