@@ -42,6 +42,8 @@
 .card {
   width: 25%;
   padding: 10px;
+  background: #d9eaed;
+  margin: 10px 0;
 }
 
 .card__image {
@@ -49,4 +51,6 @@
 }
 
 .card__title {
+  background: #d9eaed;
+  margin: 10px 0;
 }
