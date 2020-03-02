@@ -10,8 +10,8 @@ const PostList = () => {
     getPosts();
   }, []);
 
-  const postList = blogPosts.map(post => {
-    return <PostCard key={uuidv1()} post={post} />;
+  const postList = blogPosts.map((post, index) => {
+    return <PostCard key={index} post={post} postId={index} />;
   });
 
   console.log(blogPosts);
