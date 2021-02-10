@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sarah27h/blog-app/static/css/main.4c438493.chunk.css",
+    "main.js": "/sarah27h/blog-app/static/js/main.6f41a605.chunk.js",
+    "main.js.map": "/sarah27h/blog-app/static/js/main.6f41a605.chunk.js.map",
+    "runtime-main.js": "/sarah27h/blog-app/static/js/runtime-main.98ced6eb.js",
+    "runtime-main.js.map": "/sarah27h/blog-app/static/js/runtime-main.98ced6eb.js.map",
+    "static/js/2.8efaff02.chunk.js": "/sarah27h/blog-app/static/js/2.8efaff02.chunk.js",
+    "static/js/2.8efaff02.chunk.js.map": "/sarah27h/blog-app/static/js/2.8efaff02.chunk.js.map",
+    "index.html": "/sarah27h/blog-app/index.html",
+    "precache-manifest.964fa433cf791fabd6b5da2a65f47101.js": "/sarah27h/blog-app/precache-manifest.964fa433cf791fabd6b5da2a65f47101.js",
+    "service-worker.js": "/sarah27h/blog-app/service-worker.js",
+    "static/css/main.4c438493.chunk.css.map": "/sarah27h/blog-app/static/css/main.4c438493.chunk.css.map",
+    "static/js/2.8efaff02.chunk.js.LICENSE.txt": "/sarah27h/blog-app/static/js/2.8efaff02.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.98ced6eb.js",
+    "static/js/2.8efaff02.chunk.js",
+    "static/css/main.4c438493.chunk.css",
+    "static/js/main.6f41a605.chunk.js"
+  ]
+}
