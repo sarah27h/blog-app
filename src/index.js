@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Router } from 'react-router';
-import createHashHistory from 'history/createHashHistory';
-
-const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
+import { HashRouter as Router } from 'react-router';
 
 ReactDOM.render(
-  <Router history={hashHistory}>
+  <Router>
     <App />
   </Router>,
   document.getElementById('root')
