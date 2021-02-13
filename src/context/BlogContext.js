@@ -3,11 +3,11 @@ import { BlogReducer } from '../reducers/BlogReducer';
 
 export const BlogContext = createContext();
 
-const BlogContextProvider = props => {
+const BlogContextProvider = (props) => {
   const initialState = {
     blogPosts: [],
     currentBlogPost: null,
-    loading: true
+    loading: true,
   };
 
   const API_KEY = process.env.REACT_APP_NEWS_KEY;
@@ -30,7 +30,7 @@ const BlogContextProvider = props => {
     }
   };
 
-  const getPostBYId = id => {
+  const getPostBYId = (id) => {
     if (state.blogPosts.length > 0) {
       dispatch({ type: 'SEND_REQUEST' });
       const currentPost = state.blogPosts.filter((post, index) => index === Number(id));
@@ -50,7 +50,7 @@ const BlogContextProvider = props => {
         currentBlogPost: state.currentBlogPost,
         loading: state.loading,
         getPosts,
-        getPostBYId
+        getPostBYId,
       }}
     >
       {props.children}
